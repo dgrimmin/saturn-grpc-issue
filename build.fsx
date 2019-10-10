@@ -6,10 +6,6 @@ open Fake.DotNet
 open Fake.IO
 
 
-    // |> Proc.start
-
-// open Microsoft.AspNetCore.Hosting
-
 Target.create "CleanGRPCsample" (fun _ ->
     [
         "./src/gRpcSample/bin/"
@@ -19,9 +15,7 @@ Target.create "CleanGRPCsample" (fun _ ->
 )
 
 Target.create "BuildGRPCsample" (fun _ ->
-    "src/gRpcSample/gRpcSample.fsproj" 
-    |> DotNet.build (fun d -> {d with Configuration = DotNet.BuildConfiguration.Debug})
-    |> ignore 
+    "src/gRpcSample/gRpcSample.fsproj" |> DotNet.build id |> ignore 
 ) 
 
 Target.runOrDefault "BuildGRPCsample"
