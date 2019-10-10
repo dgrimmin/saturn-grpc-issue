@@ -18,6 +18,11 @@ Target.create "BuildGRPCsample" (fun _ ->
     "src/gRpcSample/gRpcSample.fsproj" |> DotNet.build id |> ignore 
 ) 
 
+open Fake.Core.TargetOperators
+
+"CleanGRPCsample"
+    ==> "BuildGRPCsample"
+
 Target.runOrDefault "BuildGRPCsample"
 
 
