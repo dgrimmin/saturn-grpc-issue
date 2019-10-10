@@ -12,8 +12,8 @@ open Fake.IO
 
 Target.create "CleanGRPCsample" (fun _ ->
     [
-        "./src/PetersburgBibliotheek/bin/"
-        "./src/PetersburgBibliotheek/obj/"
+        "./src/gRpcSample/bin/"
+        "./src/gRpcSample/obj/"
     ]
     |> Shell.cleanDirs 
 )
