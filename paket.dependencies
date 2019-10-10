@@ -1,0 +1,13 @@
+source https://www.nuget.org/api/v2
+
+nuget saturn.extensions.grpc
+// [ FAKE GROUP ]
+
+group Build
+	source https://api.nuget.org/v3/index.json
+    framework: netstandard2.0
+	nuget Fake.DotNet.Testing.Expecto
+	nuget FSharp.Core 4.6.2
+	nuget Fake.DotNet.Cli
+	nuget Fake.IO.FileSystem
+	nuget Fake.Core.Target
